@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>
+        <center>-My First Google Map-<center></h1>
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(51.508742, -0.120850),
+                zoom: 5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvHasVTNdO0-m1AV0om51qAFdAXR2pfT4&callback=myMap"></script>
+
+    <html ng-app="WikiSearch">
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-resource.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.0/semantic.min.css">
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="app.js"></script>
+        <script src="ajax.js"></script>
+
+        <center><h1>Wikipedia Search Function</h1></center>
+        <div ng-controller="WikiCtrl" id='content'>
+            <div id="control">
+                <div class="ui right action left icon input">
+                    <input type="text" placeholder="Search Wikipedia" ng-model='query'>
+                    <i class="big icon search"></i>
+                    <button onclick="location.href='https://en.wikipedia.org/wiki/Special:Random';" class="ui teal right labeled icon button">
+                        <i class="random icon"></i>
+                        Go Random
+                    </button>
+                </div>
+            </div>
+            <div class="ui raised segment" ng-repeat='data in wikiData'>
+                <h4 class="ui header">{{data.name}}</h4>
+                <p>{{data.snip}}</p>
+                <a href="{{data.link}}">Read More
+                    <i class="small external icon"></i>
+                </a>
+            </div>
+        </div>
+
+        <header>
+            <center>
+                <h1>Movie Search Function<h1>
+            </center>
+        </header>
+
+        <center>
+            <form id="search-form">
+                <input type="text" id="search-input">
+                <button type="submit">Search</button>
+            </form>
+        </center>
+        <section>
+            <article id="search-results"></article>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <!-- <script src="json.js"></script-->
+        <script src="ajax.js"></script>
+        </body>
+        </html>

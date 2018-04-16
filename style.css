@@ -1,0 +1,22 @@
+
+body{ 
+    background-color: rgb(10, 71, 100)
+}
+   
+   h1{ 
+       color: goldenrod
+}
+   p{ 
+       color: rgb(214, 139, 26)
+   
+}
+
+#content {
+	max-width: 800px;
+	margin: auto auto;
+}
+
+input[type=text] {
+   font-size: 30px;
+   height: 70px;
+ }
